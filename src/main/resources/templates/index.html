@@ -32,7 +32,7 @@
 
     <section class="grid">
         <article class="card" th:each="food : ${foods}">
-            <img th:src="${food.imageUrl}" th:alt="${food.name}">
+            <img class="food-image" th:src="${food.imageUrl}" th:alt="${food.name}" loading="lazy">
             <div class="card-body">
                 <div class="card-title-row">
                     <h2 th:text="${food.name}">Food Name</h2>

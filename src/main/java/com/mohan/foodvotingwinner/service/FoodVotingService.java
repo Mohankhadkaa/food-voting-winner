@@ -34,37 +34,37 @@ public class FoodVotingService {
                 "Chicken Momo",
                 "Nepali",
                 "Steamed dumplings served with spicy tomato chutney.",
-                "https://placehold.co/700x450/f6d365/333333?text=Chicken+Momo"
+                "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46"
         ));
         foodItemRepository.save(new FoodItem(
-                "Kimchi Fried Rice",
+                "Korean Bibimbap",
                 "Korean",
-                "Fried rice cooked with kimchi, vegetables, and egg.",
-                "https://placehold.co/700x450/fda085/333333?text=Kimchi+Fried+Rice"
+                "Mixed rice with sautéed vegetables, egg, and gochujang sauce.",
+                "https://images.unsplash.com/photo-1553163147-622ab57be1c7"
         ));
         foodItemRepository.save(new FoodItem(
-                "Veg Biryani",
-                "Indian",
-                "Aromatic rice with vegetables, herbs, and warm spices.",
-                "https://placehold.co/700x450/a1c4fd/333333?text=Veg+Biryani"
+                "Nepali Thakali Set",
+                "Nepali",
+                "Traditional thali with rice, dal, curry, pickles, and sides.",
+                "https://images.unsplash.com/photo-1606491956689-2ea866880c84"
         ));
         foodItemRepository.save(new FoodItem(
                 "Ramen Bowl",
                 "Japanese",
                 "Noodles in rich broth with toppings and soft egg.",
-                "https://placehold.co/700x450/c2e9fb/333333?text=Ramen+Bowl"
+                "https://images.unsplash.com/photo-1569718212165-3a8278d5f624"
         ));
         foodItemRepository.save(new FoodItem(
-                "Fish Taco",
+                "Tacos",
                 "Mexican",
-                "Soft tortilla filled with seasoned fish, slaw, and sauce.",
-                "https://placehold.co/700x450/d4fc79/333333?text=Fish+Taco"
+                "Soft tortilla filled with seasoned meat, slaw, and salsa.",
+                "https://images.unsplash.com/photo-1565299585323-38d6b0865b47"
         ));
         foodItemRepository.save(new FoodItem(
-                "Paneer Butter Masala",
+                "Chicken Biryani",
                 "Indian",
-                "Paneer cubes cooked in creamy tomato butter gravy.",
-                "https://placehold.co/700x450/ffecd2/333333?text=Paneer+Butter+Masala"
+                "Layered aromatic rice with spiced chicken, herbs, and saffron.",
+                "https://images.unsplash.com/photo-1563379091339-03246963d7d3"
         ));
     }
 

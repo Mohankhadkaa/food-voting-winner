@@ -21,6 +21,7 @@
             <thead>
             <tr>
                 <th>Rank</th>
+                <th>Photo</th>
                 <th>Food</th>
                 <th>Category</th>
                 <th>Average Rating</th>
@@ -31,6 +32,7 @@
             <tbody>
             <tr th:each="result, stat : ${results}">
                 <td th:text="${stat.index + 1}">1</td>
+                <td><img class="results-image" th:src="${result.foodItem.imageUrl}" th:alt="${result.foodItem.name}"></td>
                 <td th:text="${result.foodItem.name}">Food</td>
                 <td th:text="${result.foodItem.category}">Category</td>
                 <td th:text="|${result.averageText} / 5|">0</td>

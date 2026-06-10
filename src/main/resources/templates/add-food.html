@@ -30,8 +30,8 @@
         <small class="error" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></small>
 
         <label>Image URL</label>
-        <input type="url" th:field="*{imageUrl}" placeholder="Optional image URL">
-        <small class="hint">Leave empty to use automatic placeholder image.</small>
+        <input type="url" th:field="*{imageUrl}" placeholder="Paste image URL link">
+        <small class="hint">Paste a link to a food photo. Leave empty for a placeholder.</small>
 
         <button type="submit">Add Food</button>
     </form>

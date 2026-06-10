@@ -13,7 +13,7 @@
     <section class="winner-page" th:if="${winner != null}">
         <p class="eyebrow">Winner Food</p>
         <h1 th:text="${winner.foodItem.name}">Winner Name</h1>
-        <img th:src="${winner.foodItem.imageUrl}" th:alt="${winner.foodItem.name}">
+        <img class="winner-image" th:src="${winner.foodItem.imageUrl}" th:alt="${winner.foodItem.name}">
         <p class="winner-description" th:text="${winner.foodItem.description}">Description</p>
         <div class="winner-stats">
             <div>
