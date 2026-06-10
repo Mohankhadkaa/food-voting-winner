@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Food - Food Voting</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div th:replace="~{fragments :: header}"></div>
+
+<main class="container narrow">
+    <section class="page-title">
+        <p class="eyebrow">Create New Food</p>
+        <h1>Add Food</h1>
+        <p>Add your own food item to the voting list.</p>
+    </section>
+
+    <form class="add-form" th:action="@{/add}" th:object="${foodItem}" method="post">
+        <label>Food Name</label>
+        <input type="text" th:field="*{name}" placeholder="Example: Sel Roti" required>
+        <small class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></small>
+
+        <label>Category</label>
+        <input type="text" th:field="*{category}" placeholder="Example: Nepali" required>
+        <small class="error" th:if="${#fields.hasErrors('category')}" th:errors="*{category}"></small>
+
+        <label>Description</label>
+        <textarea th:field="*{description}" placeholder="Short food description" required></textarea>
+        <small class="error" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></small>
+
+        <label>Image URL</label>
+        <input type="url" th:field="*{imageUrl}" placeholder="Optional image URL">
+        <small class="hint">Leave empty to use automatic placeholder image.</small>
+
+        <button type="submit">Add Food</button>
+    </form>
+</main>
+
+<div th:replace="~{fragments :: footer}"></div>
+</body>
+</html>

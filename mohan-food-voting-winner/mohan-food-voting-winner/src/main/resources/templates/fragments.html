@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<header th:fragment="header">
+    <nav class="navbar">
+        <a class="brand" th:href="@{/}">FoodVoting</a>
+        <div class="nav-links">
+            <a th:href="@{/}">Home</a>
+            <a th:href="@{/results}">Results</a>
+            <a th:href="@{/winner}">Winner Food</a>
+            <a th:href="@{/add}">Add Food</a>
+        </div>
+    </nav>
+</header>
+
+<footer th:fragment="footer">
+    <p>FoodVoting App | Spring Boot + Thymeleaf + H2</p>
+</footer>
+</body>
+</html>

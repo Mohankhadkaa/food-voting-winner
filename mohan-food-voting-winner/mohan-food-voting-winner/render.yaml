@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: food-voting-winner
+    runtime: docker
+    plan: free
+    healthCheckPath: /

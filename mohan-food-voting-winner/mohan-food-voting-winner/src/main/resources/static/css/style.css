@@ -1,0 +1,327 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff7ed;
+    color: #2d1b12;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 8%;
+    background: #33140f;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.brand {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.nav-links {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: #ffe6c7;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+.container {
+    width: min(1120px, 92%);
+    margin: 0 auto;
+    padding: 36px 0;
+}
+
+.narrow {
+    width: min(720px, 92%);
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 24px;
+    padding: 34px;
+    border-radius: 28px;
+    background: linear-gradient(135deg, #ff9a3c, #ffcf70);
+    box-shadow: 0 15px 35px rgba(72, 27, 7, 0.16);
+    margin-bottom: 28px;
+}
+
+.hero h1,
+.page-title h1,
+.winner-page h1,
+.empty-state h1 {
+    margin: 0;
+    font-size: clamp(34px, 5vw, 56px);
+}
+
+.hero p,
+.page-title p,
+.empty-state p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #7a260c;
+}
+
+.winner-mini {
+    background: rgba(255, 255, 255, 0.78);
+    border-radius: 24px;
+    padding: 24px;
+    align-self: center;
+}
+
+.winner-mini span,
+.winner-stats span {
+    display: block;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #8b4a21;
+    font-weight: 800;
+}
+
+.winner-mini strong {
+    display: block;
+    font-size: 28px;
+    margin-top: 8px;
+}
+
+.alert {
+    padding: 14px 18px;
+    background: #d1fae5;
+    color: #065f46;
+    border-radius: 14px;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 22px;
+}
+
+.card {
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 28px rgba(72, 27, 7, 0.12);
+}
+
+.card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.card-title-row h2 {
+    margin: 0;
+    font-size: 23px;
+}
+
+.card-title-row span {
+    background: #fff1d6;
+    color: #8a3d0d;
+    padding: 6px 10px;
+    border-radius: 99px;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.card-body p {
+    color: #674333;
+    line-height: 1.5;
+}
+
+.vote-form {
+    display: grid;
+    gap: 10px;
+}
+
+.vote-form select,
+.vote-form input,
+.add-form input,
+.add-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #f4d3b4;
+    border-radius: 12px;
+    font-size: 15px;
+}
+
+.vote-form button,
+.add-form button,
+.primary-link {
+    display: inline-block;
+    border: 0;
+    background: #d9480f;
+    color: white;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-weight: 900;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+.delete-form {
+    margin-top: 10px;
+}
+
+.delete-form button {
+    width: 100%;
+    border: 0;
+    background: #3a1f17;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.table-card {
+    background: white;
+    border-radius: 22px;
+    overflow-x: auto;
+    box-shadow: 0 10px 28px rgba(72, 27, 7, 0.12);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 16px;
+    border-bottom: 1px solid #f3d7bd;
+}
+
+th {
+    background: #33140f;
+    color: white;
+}
+
+.winner-page,
+.empty-state {
+    text-align: center;
+    background: white;
+    border-radius: 30px;
+    padding: 34px;
+    box-shadow: 0 10px 28px rgba(72, 27, 7, 0.12);
+}
+
+.winner-page img {
+    width: min(620px, 100%);
+    height: 330px;
+    object-fit: cover;
+    border-radius: 22px;
+    margin: 24px 0;
+}
+
+.winner-description {
+    font-size: 19px;
+    color: #674333;
+}
+
+.winner-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+    margin: 28px 0;
+}
+
+.winner-stats div {
+    background: #fff3df;
+    padding: 18px;
+    border-radius: 18px;
+}
+
+.winner-stats strong {
+    display: block;
+    font-size: 27px;
+    margin-top: 8px;
+}
+
+.add-form {
+    display: grid;
+    gap: 10px;
+    background: white;
+    padding: 26px;
+    border-radius: 22px;
+    box-shadow: 0 10px 28px rgba(72, 27, 7, 0.12);
+}
+
+.add-form label {
+    font-weight: 900;
+    margin-top: 8px;
+}
+
+.add-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.error {
+    color: #b91c1c;
+    font-weight: 800;
+}
+
+.hint {
+    color: #7c5a46;
+}
+
+footer {
+    text-align: center;
+    padding: 28px;
+    color: #6b3a24;
+}
+
+@media (max-width: 760px) {
+    .navbar,
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar {
+        align-items: flex-start;
+        gap: 14px;
+    }
+}

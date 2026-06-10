@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winner Food - Food Voting</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div th:replace="~{fragments :: header}"></div>
+
+<main class="container">
+    <section class="winner-page" th:if="${winner != null}">
+        <p class="eyebrow">Winner Food</p>
+        <h1 th:text="${winner.foodItem.name}">Winner Name</h1>
+        <img th:src="${winner.foodItem.imageUrl}" th:alt="${winner.foodItem.name}">
+        <p class="winner-description" th:text="${winner.foodItem.description}">Description</p>
+        <div class="winner-stats">
+            <div>
+                <span>Average Rating</span>
+                <strong th:text="|${winner.averageText} / 5|">5</strong>
+            </div>
+            <div>
+                <span>Total Votes</span>
+                <strong th:text="${winner.voteCount}">0</strong>
+            </div>
+            <div>
+                <span>Total Score</span>
+                <strong th:text="${winner.totalScore}">0</strong>
+            </div>
+        </div>
+        <a class="primary-link" th:href="@{/results}">View Full Results</a>
+    </section>
+
+    <section class="empty-state" th:if="${winner == null}">
+        <h1>No Winner Food Yet</h1>
+        <p>No votes have been added. Go to the home page and vote first.</p>
+        <a class="primary-link" th:href="@{/}">Vote Now</a>
+    </section>
+</main>
+
+<div th:replace="~{fragments :: footer}"></div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Voting</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div th:replace="~{fragments :: header}"></div>
+
+<main class="container">
+    <section class="hero">
+        <div>
+            <p class="eyebrow">Class Homework Project</p>
+            <h1>Vote for Your Favorite Food</h1>
+            <p>Choose a dish, give a 1 to 5 rating, and check which food becomes the winner.</p>
+        </div>
+        <div class="winner-mini" th:if="${winner != null}">
+            <span>Current Winner</span>
+            <strong th:text="${winner.foodItem.name}">Winner</strong>
+            <p th:text="|Average: ${winner.averageText} / 5 from ${winner.voteCount} votes|">Average</p>
+        </div>
+        <div class="winner-mini" th:if="${winner == null}">
+            <span>Current Winner</span>
+            <strong>No winner yet</strong>
+            <p>Vote first to create a winner.</p>
+        </div>
+    </section>
+
+    <div class="alert" th:if="${message}" th:text="${message}"></div>
+
+    <section class="grid">
+        <article class="card" th:each="food : ${foods}">
+            <img th:src="${food.imageUrl}" th:alt="${food.name}">
+            <div class="card-body">
+                <div class="card-title-row">
+                    <h2 th:text="${food.name}">Food Name</h2>
+                    <span th:text="${food.category}">Category</span>
+                </div>
+                <p th:text="${food.description}">Description</p>
+
+                <form class="vote-form" th:action="@{/vote}" method="post">
+                    <input type="hidden" name="foodId" th:value="${food.id}">
+                    <select name="rating" required>
+                        <option value="">Rate...</option>
+                        <option value="1">1 - Terrible</option>
+                        <option value="2">2 - Poor</option>
+                        <option value="3">3 - Good</option>
+                        <option value="4">4 - Very Good</option>
+                        <option value="5">5 - Delicious!</option>
+                    </select>
+                    <input type="text" name="comment" placeholder="Optional comment">
+                    <button type="submit">Vote</button>
+                </form>
+
+                <form th:action="@{/delete/{id}(id=${food.id})}" method="post" class="delete-form">
+                    <button type="submit" onclick="return confirm('Delete this food?')">Delete</button>
+                </form>
+            </div>
+        </article>
+    </section>
+</main>
+
+<div th:replace="~{fragments :: footer}"></div>
+</body>
+</html>

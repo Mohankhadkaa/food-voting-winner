@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results - Food Voting</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div th:replace="~{fragments :: header}"></div>
+
+<main class="container">
+    <section class="page-title">
+        <p class="eyebrow">Ranking Table</p>
+        <h1>Food Voting Results</h1>
+        <p>The food with the highest average rating becomes the winner.</p>
+    </section>
+
+    <div class="table-card">
+        <table>
+            <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Food</th>
+                <th>Category</th>
+                <th>Average Rating</th>
+                <th>Votes</th>
+                <th>Total Score</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="result, stat : ${results}">
+                <td th:text="${stat.index + 1}">1</td>
+                <td th:text="${result.foodItem.name}">Food</td>
+                <td th:text="${result.foodItem.category}">Category</td>
+                <td th:text="|${result.averageText} / 5|">0</td>
+                <td th:text="${result.voteCount}">0</td>
+                <td th:text="${result.totalScore}">0</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+
+<div th:replace="~{fragments :: footer}"></div>
+</body>
+</html>
